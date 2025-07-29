@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🎉 Chúc mừng sinh nhật chị Quỳnh 🎂</title>
+<style>
+/* === PHẦN CSS === */
+body {
+  margin:0; padding:0;
+  background:linear-gradient(135deg, #d2e9f7, #f8dce7); /* Màu nền gradient */
+  font-family:'Comic Sans MS', cursive, sans-serif; /* Font chữ vui nhộn */
+  color:#333;
+  overflow:hidden;
+}
+
+/* === TIÊU ĐỀ === */
+h1 {
+  text-align:center;
+  margin-top:20px;
+  font-size:2em;
+  text-shadow:1px 1px 2px #fff; /* Hiệu ứng bóng chữ */
+}
+
+/* === KHUNG CHỨA CHÍNH === */
+.container {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  height:80vh; /* Chiếm 80% chiều cao màn hình */
+  position:relative;
+}
+
+/* === PHẦN BÁNH SINH NHẬT === */
+.cake {
+  position:relative;
+  width:150px;
+  margin:0 auto;
+}
+
+/* Các lớp bánh */
+.layer {
+  background:#5b3a29; /* Màu nâu của bánh */
+  border-radius:10px;
+  margin:0 auto;
+  box-shadow:inset 0 -4px 0 #3a1e1e; /* Hiệu ứng bóng bên trong */
+  position:relative;
+}
+.layer1{width:150px;height:50px;} /* Lớp dưới cùng - to nhất */
+.layer2{width:110px;height:40px;margin-top:-8px;} /* Lớp giữa */
+.layer3{width:70px;height:30px;margin-top:-8px;} /* Lớp trên cùng */
+
+/* Lớp kem phủ */
+.icing{
+  position:absolute; top:0; width:100%; height:8px; background:#fff; border-radius:4px;
+}
+
+/* Các viên kẹo trang trí */
+.candy{
+  width:6px;height:6px;border-radius:50%;position:absolute;top:4px;
+}
+
+/* === NGỌN LỬA === */
+.flame-container {
+  position: absolute;
+  top: -70px; /* Vị trí trên đỉnh bánh */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 60px;
+}
+.flame{
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at center, white 0%, yellow 30%, orange 70%, red 100%); /* Gradient màu lửa */
+  border-radius: 50% 50% 20% 20%;
+  box-shadow: 0 0 30px 15px rgba(255, 165, 0, 0.6); /* Ánh sáng tỏa */
+  animation: flicker 0.8s ease-in-out infinite alternate; /* Hiệu ứng lập lòe */
+  filter: blur(1px); /* Làm mờ viền */
+}
+
+/* Hiệu ứng lửa lập lòe */
+@keyframes flicker{
+  0% { transform: rotate(-3deg) scaleY(1); opacity: 0.9; }
+  25% { transform: rotate(2deg) scaleY(1.1); opacity: 1; }
+  50% { transform: rotate(3deg) scaleY(0.9); opacity: 0.8; }
+  75% { transform: rotate(-2deg) scaleY(1.05); opacity: 0.95; }
+  100% { transform: rotate(-3deg) scaleY(1); opacity: 0.9; }
+}
+
+/* === BÓNG BAY === */
+.balloon{
+  position:absolute;bottom:-100px;width:30px;height:40px;
+  background:pink;border-radius:50%;
+  animation:rise 7s linear infinite; /* Hiệu ứng bay lên */
+}
+.balloon::after{
+  content:'';position:absolute;bottom:-8px;left:50%;width:1px;height:15px;background:#666; /* Dây bóng bay */
+}
+
+/* Hiệu ứng bóng bay bay lên */
+@keyframes rise{
+  0%{transform:translateY(0);opacity:0;}
+  10%{opacity:1;}
+  100%{transform:translateY(-120vh);opacity:0;}
+}
+
+/* === THƯ CHÚC MỪNG === */
+.letter{
+  position:absolute;
+  bottom:-40px;
+  width:100%;
+  text-align:center;
+  font-size:1.4em;
+  animation: riseLetter 5s forwards; /* Hiệu ứng bay lên */
+  animation-delay: 2s; /* Trễ 2 giây */
+}
+
+/* Hiệu ứng thư bay */
+@keyframes riseLetter{
+  0%{bottom:-40px;opacity:0;}
+  50%{opacity:1;}
+  100%{bottom:200px;opacity:0;}
+}
+
+/* === NÚT THỔI NẾN === */
+button{
+  margin-top:10px;
+  padding:8px 18px;
+  font-size:1em;
+  border:none;
+  border-radius:8px;
+  background:#ff7eb9; /* Màu hồng */
+  color:white;
+  cursor:pointer;
+  transition: all 0.3s; /* Hiệu ứng mượt */
+}
+button:hover {
+  transform: scale(1.05); /* Phóng to khi rê chuột */
+  background:#ff6ba9;
+}
+
+/* === NÚT ĐIỀU KHIỂN NHẠC === */
+.music-control {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(255,255,255,0.7); /* Nền trong suốt */
+  padding: 10px;
+  border-radius: 50%; /* Hình tròn */
+  cursor: pointer;
+  z-index: 100; /* Luôn hiển thị trên cùng */
+  transition: all 0.3s;
+}
+.music-control:hover {
+  transform: scale(1.1); /* Phóng to khi rê chuột */
+  background: rgba(255,255,255,0.9);
+}
+</style>
+</head>
+<body>
+
+<!-- === PHẦN HIỂN THỊ === -->
+<h1>🎉 Chúc mừng sinh nhật chị Quỳnh 🎉</h1>
+
+<div class="container">
+  <div class="cake">
+    <!-- NGỌN LỬA -->
+    <div class="flame-container">
+      <div id="flame" class="flame"></div>
+    </div>
+    
+    <!-- 3 LỚP BÁNH -->
+    <div class="layer layer3">
+      <div class="icing"></div>
+      <div class="candy" style="left:10px; background:red;"></div>
+      <div class="candy" style="left:30px; background:yellow;"></div>
+      <div class="candy" style="left:50px; background:green;"></div>
+    </div>
+    <div class="layer layer2">
+      <div class="icing"></div>
+      <div class="candy" style="left:15px; background:blue;"></div>
+      <div class="candy" style="left:50px; background:orange;"></div>
+    </div>
+    <div class="layer layer1">
+      <div class="icing"></div>
+      <div class="candy" style="left:20px; background:purple;"></div>
+      <div class="candy" style="left:60px; background:pink;"></div>
+      <div class="candy" style="left:110px; background:cyan;"></div>
+    </div>
+  </div>
+  
+  <!-- NÚT THỔI NẾN -->
+  <button id="blowButton" onclick="blowCandle()">Thổi nến</button>
+</div>
+
+<!-- THƯ CHÚC MỪNG -->
+<div class="letter">Chúc chị sinh nhật zui zẻ 🎂🎈</div>
+
+<!-- NÚT ĐIỀU KHIỂN NHẠC -->
+<div class="music-control" onclick="toggleMusic()">
+  <span id="music-icon">🔊</span>
+</div>
+
+<!-- === PHẦN NHẠC === -->
+<!-- Thay đổi src="happy-birthday.mp3" bằng file nhạc của bạn -->
+<audio id="birthdaySong">
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+  Trình duyệt không hỗ trợ audio
+</audio>
+
+<script>
+// === TẠO BÓNG BAY ===
+for(let i=0;i<15;i++){
+  let b=document.createElement('div');
+  b.className='balloon';
+  b.style.left=Math.random()*100+'vw'; /* Vị trí ngẫu nhiên */
+  b.style.background=i%2==0?'#add8e6':'#f9c2d1'; /* Màu xen kẽ */
+  b.style.animationDelay=(Math.random()*3)+'s'; /* Trễ ngẫu nhiên */
+  document.body.appendChild(b);
+}
+
+// === KHAI BÁO BIẾN ===
+const audio = document.getElementById('birthdaySong');
+const flame = document.getElementById('flame');
+const wowButton = document.getElementById('blowButton');
+let isPlaying = false; // Trạng thái phát nhạc
+
+// === TỰ ĐỘNG PHÁT NHẠC KHI TƯƠNG TÁC ===
+function initAudio() {
+  audio.play()
+    .then(() => {
+      isPlaying = true;
+      document.getElementById('music-icon').textContent = '🔊';
+    })
+    .catch(error => console.log('Trình duyệt chặn tự động phát:', error));
+}
+
+// === XỬ LÝ KHI HẾT BÀI HÁT ===
+audio.addEventListener('ended', function() {
+  blowCandle(); // Tự động tắt nến
+  wowButton.disabled = true; // Vô hiệu hóa nút thổi
+  wowButton.textContent = '🎉 Chúc mừng! 🎉';
+  wowButton.style.background = '#4CAF50'; // Màu xanh lá
+});
+
+// === NÚT THỔI NẾN ===
+function blowCandle() {
+  flame.style.display = 'none'; // Tắt lửa
+  wowButton.disabled = true; // Vô hiệu hóa nút
+  wowButton.textContent = '🎂 Đã thổi nến!';
+  wowButton.style.background = '#9E9E9E'; // Màu xám
+  
+  // Dừng nhạc nếu đang phát
+  if(isPlaying) {
+    audio.pause();
+    audio.currentTime = 0; // Trở về đầu bài hát
+    isPlaying = false;
+    document.getElementById('music-icon').textContent = '🔇';
+  }
+}
+
+// === NÚT ĐIỀU KHIỂN NHẠC ===
+function toggleMusic() {
+  if (isPlaying) {
+    audio.pause();
+    document.getElementById('music-icon').textContent = '🔇';
+  } else {
+    audio.play()
+      .then(() => {
+        document.getElementById('music-icon').textContent = '🔊';
+      })
+      .catch(error => {
+        alert('Vui lòng bật nhạc thủ công: ' + error);
+      });
+  }
+  isPlaying = !isPlaying; // Đảo trạng thái
+}
+
+// === KÍCH HOẠT KHI CLICK TRANG ===
+// (Yêu cầu của trình duyệt để phát nhạc)
+document.body.addEventListener('click', function init() {
+  initAudio();
+  document.body.removeEventListener('click', init); // Chỉ chạy 1 lần
+}, { once: true });
+</script>
+
+</body>
+</html>
